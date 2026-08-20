@@ -13,14 +13,56 @@
 <style>
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{font-family:Arial,sans-serif;margin:0;background:#f3f4f6;color:#111827}
-.wrap{max-width:1180px;margin:0 auto;padding:24px}
-.app{display:grid;grid-template-columns:380px 1fr;gap:22px;align-items:start}
-.panel{background:#fff;border-radius:12px;padding:20px;box-shadow:0 2px 10px #0001}
-h1{margin:0 0 4px;font-size:24px}
-.muted{color:#6b7280;font-size:13px;margin-bottom:18px}
-label{display:block;font-weight:600;font-size:13px;margin:12px 0 5px}
-input,textarea,button{font:inherit}
+
+body{
+  font-family:Arial,sans-serif;
+  margin:0;
+  background:#f3f4f6;
+  color:#111827
+}
+
+.wrap{
+  max-width:1180px;
+  margin:0 auto;
+  padding:24px
+}
+
+.app{
+  display:grid;
+  grid-template-columns:380px 1fr;
+  gap:22px;
+  align-items:start
+}
+
+.panel{
+  background:#fff;
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 2px 10px #0001
+}
+
+h1{
+  margin:0 0 4px;
+  font-size:24px
+}
+
+.muted{
+  color:#6b7280;
+  font-size:13px;
+  margin-bottom:18px
+}
+
+label{
+  display:block;
+  font-weight:600;
+  font-size:13px;
+  margin:12px 0 5px
+}
+
+input,textarea,button{
+  font:inherit
+}
+
 input,textarea{
   width:100%;
   border:1px solid #d1d5db;
@@ -30,14 +72,28 @@ input,textarea{
   background:#fff;
   color:#111827
 }
+
 input:focus,textarea:focus{
   outline:none;
   border-color:#6b7280;
   box-shadow:0 0 0 2px #0000000d
 }
-textarea{min-height:70px;resize:vertical}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.items{margin-top:14px}
+
+textarea{
+  min-height:70px;
+  resize:vertical
+}
+
+.row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px
+}
+
+.items{
+  margin-top:14px
+}
+
 .item{
   border:1px solid #e5e7eb;
   border-radius:8px;
@@ -45,17 +101,20 @@ textarea{min-height:70px;resize:vertical}
   margin-bottom:8px;
   background:#fafafa
 }
+
 .itemgrid{
   display:grid;
   grid-template-columns:65px 1fr 110px;
   gap:7px
 }
+
 .itemgrid2{
   display:grid;
   grid-template-columns:1fr 110px;
   gap:7px;
   margin-top:7px
 }
+
 .btn{
   border:0;
   border-radius:7px;
@@ -65,19 +124,48 @@ textarea{min-height:70px;resize:vertical}
   min-height:42px;
   touch-action:manipulation
 }
-.btn:hover{opacity:.9}
-.btn:disabled{opacity:.6;cursor:not-allowed}
-.primary{background:#111827;color:#fff}
-.secondary{background:#e5e7eb;color:#111827}
-.success{background:#166534;color:#fff}
-.info-btn{background:#1d4ed8;color:#fff}
-.danger{background:#fee2e2;color:#991b1b}
+
+.btn:hover{
+  opacity:.9
+}
+
+.btn:disabled{
+  opacity:.6;
+  cursor:not-allowed
+}
+
+.primary{
+  background:#111827;
+  color:#fff
+}
+
+.secondary{
+  background:#e5e7eb;
+  color:#111827
+}
+
+.success{
+  background:#166534;
+  color:#fff
+}
+
+.info-btn{
+  background:#1d4ed8;
+  color:#fff
+}
+
+.danger{
+  background:#fee2e2;
+  color:#991b1b
+}
+
 .actions{
   display:flex;
   gap:8px;
   flex-wrap:wrap;
   margin-top:15px
 }
+
 .export-title{
   font-size:12px;
   font-weight:700;
@@ -85,12 +173,14 @@ textarea{min-height:70px;resize:vertical}
   width:100%;
   margin-top:5px
 }
+
 .preview{
   background:#9ca3af;
   padding:25px;
   overflow:auto;
   min-width:0
 }
+
 .paper{
   background:#fff;
   width:210mm;
@@ -103,38 +193,47 @@ textarea{min-height:70px;resize:vertical}
   box-shadow:0 2px 10px #0003;
   overflow:hidden
 }
+
 .rfqtitle{
   text-align:center;
   font-size:18px;
   font-weight:700;
   margin-bottom:15px
 }
+
 .info{
   width:100%;
   border-collapse:collapse;
   margin-bottom:14px
 }
+
 .info td{
   padding:3px 2px;
   font-size:11px;
   vertical-align:top
 }
+
 .line{
   border-bottom:1px solid #000;
   min-height:15px;
   word-break:break-word
 }
 
+
+/* =====================================================
+   QUOTATION TABLE
+   ===================================================== */
+
 .quote-table{
   width:100%;
   border-collapse:collapse;
-  font-size:10px
-}
+  border-spacing:0;
+  font-size:10px;
+  table-layout:fixed;
 
-/* =========================================
-   EXTRA WRITING SPACE
-   60px = MORE SPACE UNDER EACH ITEM
-========================================= */
+  /* KEEP ORIGINAL OVERALL TABLE HEIGHT */
+  height:216px;
+}
 
 .quote-table th,
 .quote-table td{
@@ -144,7 +243,6 @@ textarea{min-height:70px;resize:vertical}
   border-bottom:0;
   padding:5px;
   vertical-align:top;
-  height:60px;
 }
 
 .quote-table thead th{
@@ -152,21 +250,71 @@ textarea{min-height:70px;resize:vertical}
   border-bottom:1px solid #000;
   text-align:center;
   font-weight:700;
+  height:27px;
 }
 
+
+/* =====================================================
+   ITEM ROW
+   ===================================================== */
+
+.quote-table .item-row td{
+  height:27px;
+  padding:5px;
+}
+
+
+/* =====================================================
+   BLANK SPACE ROW
+   IMPORTANT:
+   Use 4 separate cells instead of colspan="4"
+   so the vertical column lines continue.
+   ===================================================== */
+
+.quote-table .space-row td{
+  padding:0;
+  border-top:0;
+  border-bottom:0;
+  height:auto;
+}
+
+
+/* =====================================================
+   COLUMN WIDTHS
+   ===================================================== */
+
+.quote-table .qty{
+  width:9%
+}
+
+.quote-table .desc{
+  width:42%
+}
+
+.quote-table .amt{
+  width:20%
+}
+
+.quote-table .terms{
+  width:29%
+}
+
+
+/* Bottom border of entire quotation table */
 .quote-table tbody tr:last-child td{
   border-bottom:1px solid #000
 }
 
-.quote-table .qty{width:9%}
-.quote-table .desc{width:42%}
-.quote-table .amt{width:20%}
-.quote-table .terms{width:29%}
+
+/* =====================================================
+   REQUESTED BY
+   ===================================================== */
 
 .requested{
   margin-top:24px;
   font-size:11px
 }
+
 .reqline{
   margin-top:20px;
   border-bottom:1px solid #000;
@@ -174,78 +322,152 @@ textarea{min-height:70px;resize:vertical}
   padding-bottom:3px
 }
 
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
 @media(max-width:1100px){
+
   .app{
     grid-template-columns:340px 1fr;
     gap:15px
   }
-  .wrap{padding:15px}
-  .preview{padding:15px}
+
+  .wrap{
+    padding:15px
+  }
+
+  .preview{
+    padding:15px
+  }
+
 }
 
 @media(max-width:900px){
-  body{background:#f3f4f6}
-  .wrap{padding:10px}
-  .app{display:block}
+
+  body{
+    background:#f3f4f6
+  }
+
+  .wrap{
+    padding:10px
+  }
+
+  .app{
+    display:block
+  }
+
   .panel{
     border-radius:10px;
     padding:15px;
     margin-bottom:12px
   }
-  h1{font-size:22px}
-  .muted{margin-bottom:14px}
+
+  h1{
+    font-size:22px
+  }
+
+  .muted{
+    margin-bottom:14px
+  }
+
   .row{
     grid-template-columns:1fr;
     gap:0
   }
-  label{margin-top:12px}
+
+  label{
+    margin-top:12px
+  }
+
   input,textarea{
     font-size:16px;
     padding:11px
   }
-  .item{padding:9px}
+
+  .item{
+    padding:9px
+  }
+
   .itemgrid{
     grid-template-columns:60px 1fr;
     gap:7px
   }
+
   .itemgrid input:last-child{
     grid-column:1 / -1
   }
+
   .itemgrid2{
     grid-template-columns:1fr
   }
+
   .itemgrid2 .btn{
     width:100%
   }
+
   .actions{
     display:grid;
     grid-template-columns:1fr 1fr
   }
+
   .actions .export-title{
     grid-column:1 / -1
   }
+
   .actions .btn{
     width:100%
   }
+
   .preview{
     padding:10px;
     border-radius:8px;
     overflow-x:auto;
     overflow-y:hidden
   }
-  .paper{margin:0 auto}
+
+  .paper{
+    margin:0 auto
+  }
+
 }
 
 @media(max-width:480px){
-  .wrap{padding:7px}
-  .panel{padding:13px}
-  h1{font-size:21px}
-  .actions{grid-template-columns:1fr}
-  .actions .export-title{grid-column:1}
-  .preview{padding:6px}
+
+  .wrap{
+    padding:7px
+  }
+
+  .panel{
+    padding:13px
+  }
+
+  h1{
+    font-size:21px
+  }
+
+  .actions{
+    grid-template-columns:1fr
+  }
+
+  .actions .export-title{
+    grid-column:1
+  }
+
+  .preview{
+    padding:6px
+  }
+
 }
 
+
+/* =====================================================
+   PRINT
+   ===================================================== */
+
 @media print{
+
   @page{
     size:A4 portrait;
     margin:0
@@ -266,8 +488,13 @@ textarea{min-height:70px;resize:vertical}
     width:210mm
   }
 
-  .app{display:block}
-  .panel{display:none}
+  .app{
+    display:block
+  }
+
+  .panel{
+    display:none
+  }
 
   .preview{
     padding:0;
@@ -285,15 +512,20 @@ textarea{min-height:70px;resize:vertical}
     box-shadow:none;
     overflow:hidden
   }
+
 }
 
-button{-webkit-tap-highlight-color:transparent}
+button{
+  -webkit-tap-highlight-color:transparent
+}
+
 </style>
 </head>
 
 <body>
 
 <div class="wrap">
+
 <div class="app">
 
 <section class="panel">
@@ -344,7 +576,11 @@ Based on your supplied A4 Request for Quotation Form.
 
 <div id="items"></div>
 
-<button type="button" class="btn secondary" onclick="addItem()">
+<button
+  type="button"
+  class="btn secondary"
+  onclick="addItem()"
+>
 + Add Item
 </button>
 
@@ -477,6 +713,7 @@ REQUEST FOR QUOTATION FORM
 </td>
 
 <td></td>
+
 <td></td>
 
 </tr>
@@ -544,47 +781,58 @@ TERMS/REMARKS
 </section>
 
 </div>
+
 </div>
 
 
 <script>
 
-const $ = id => document.getElementById(id);
+const $ = id =>
+  document.getElementById(id);
 
 let items = [];
 
 
 function esc(v){
 
-  return String(v ?? '').replace(/[&<>"']/g,c=>({
-
-    '&':'&amp;',
-    '<':'&lt;',
-    '>':'&gt;',
-    '"':'&quot;',
-    "'":'&#39;'
-
-  }[c]));
+  return String(v ?? '')
+    .replace(
+      /[&<>"']/g,
+      c => ({
+        '&':'&amp;',
+        '<':'&lt;',
+        '>':'&gt;',
+        '"':'&quot;',
+        "'":'&#39;'
+      }[c])
+    );
 
 }
 
 
 function isIOS(){
 
-  return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-
-    (navigator.platform === 'MacIntel' &&
-     navigator.maxTouchPoints > 1);
+  return /iPad|iPhone|iPod/.test(
+    navigator.userAgent
+  )
+  ||
+  (
+    navigator.platform === 'MacIntel'
+    &&
+    navigator.maxTouchPoints > 1
+  );
 
 }
 
 
-function addItem(data={
-  qty:'',
-  desc:'',
-  amount:'',
-  terms:''
-}){
+function addItem(
+  data={
+    qty:'',
+    desc:'',
+    amount:'',
+    terms:''
+  }
+){
 
   items.push({
 
@@ -611,16 +859,19 @@ function removeItem(i){
 
 function renderItems(){
 
-  const box = $('items');
+  const box =
+    $('items');
 
   box.innerHTML = '';
 
 
   items.forEach((x,i)=>{
 
-    const d = document.createElement('div');
+    const d =
+      document.createElement('div');
 
-    d.className = 'item';
+    d.className =
+      'item';
 
 
     d.innerHTML = `
@@ -684,24 +935,34 @@ function renderItems(){
   });
 
 
-  box.querySelectorAll('input').forEach(el=>{
+  box.querySelectorAll('input')
+    .forEach(el=>{
 
-    el.addEventListener('input',()=>{
+      el.addEventListener(
+        'input',
+        ()=>{
 
-      items[Number(el.dataset.i)][el.dataset.k] =
-        el.value;
+          items[
+            Number(el.dataset.i)
+          ][el.dataset.k] =
+            el.value;
 
-      updatePreview();
+          updatePreview();
+
+        }
+      );
 
     });
-
-  });
 
 
   updatePreview();
 
 }
 
+
+/* =====================================================
+   UPDATE PREVIEW
+   ===================================================== */
 
 function updatePreview(){
 
@@ -733,20 +994,19 @@ function updatePreview(){
     $('date').value;
 
 
-  $('pdate').textContent = dt
-
-    ? new Date(
-        dt + 'T00:00:00'
-      ).toLocaleDateString(
-        'en-PH',
-        {
-          year:'numeric',
-          month:'long',
-          day:'numeric'
-        }
-      )
-
-    : '';
+  $('pdate').textContent =
+    dt
+      ? new Date(
+          dt + 'T00:00:00'
+        ).toLocaleDateString(
+          'en-PH',
+          {
+            year:'numeric',
+            month:'long',
+            day:'numeric'
+          }
+        )
+      : '';
 
 
   $('prequested').textContent =
@@ -760,28 +1020,78 @@ function updatePreview(){
   tb.innerHTML = '';
 
 
+  /*
+    KEEP THE SAME OVERALL TABLE SIZE
+
+    Original table:
+    8 rows × 27px = 216px
+  */
+
+  const TOTAL_HEIGHT = 216;
+
+  const ITEM_HEIGHT = 27;
+
+
+  /*
+    Number of item sections.
+
+    Every item gets:
+      1 item row
+      1 blank space row
+
+    The blank space is divided equally
+    between all items.
+  */
+
   const count =
-    Math.max(items.length,8);
+    Math.max(items.length,1);
 
 
-  for(let i=0;i<count;i++){
-
-    const x =
-      items[i] || {};
+  const totalItemHeight =
+    count * ITEM_HEIGHT;
 
 
-    const tr =
+  const spaceHeight =
+    Math.max(
+      0,
+      (
+        TOTAL_HEIGHT -
+        totalItemHeight
+      ) / count
+    );
+
+
+  /*
+    Create item + blank space.
+
+    IMPORTANT:
+    The blank space now contains FOUR
+    separate <td> cells.
+
+    This keeps the vertical column lines
+    continuous from the header to the
+    bottom of the table.
+  */
+
+  items.forEach(x=>{
+
+    /* ITEM ROW */
+
+    const itemRow =
       document.createElement('tr');
 
+    itemRow.className =
+      'item-row';
 
-    tr.innerHTML = `
+    itemRow.innerHTML = `
 
       <td>
         ${esc(x.qty || '')}
       </td>
 
       <td>
-        ${esc(x.desc || '').replace(/\n/g,'<br>')}
+        ${esc(x.desc || '')
+          .replace(/\n/g,'<br>')}
       </td>
 
       <td>
@@ -789,18 +1099,115 @@ function updatePreview(){
       </td>
 
       <td>
-        ${esc(x.terms || '').replace(/\n/g,'<br>')}
+        ${esc(x.terms || '')
+          .replace(/\n/g,'<br>')}
       </td>
 
     `;
 
+    tb.appendChild(itemRow);
 
-    tb.appendChild(tr);
+
+    /* BLANK SPACE ROW */
+
+    const spaceRow =
+      document.createElement('tr');
+
+    spaceRow.className =
+      'space-row';
+
+    spaceRow.innerHTML = `
+
+      <td
+        style="
+          height:${spaceHeight}px;
+          padding:0;
+        "
+      ></td>
+
+      <td
+        style="
+          height:${spaceHeight}px;
+          padding:0;
+        "
+      ></td>
+
+      <td
+        style="
+          height:${spaceHeight}px;
+          padding:0;
+        "
+      ></td>
+
+      <td
+        style="
+          height:${spaceHeight}px;
+          padding:0;
+        "
+      ></td>
+
+    `;
+
+    tb.appendChild(spaceRow);
+
+  });
+
+
+  /*
+    If there are no items,
+    keep the entire 216px blank area.
+  */
+
+  if(items.length === 0){
+
+    const emptyRow =
+      document.createElement('tr');
+
+    emptyRow.className =
+      'space-row';
+
+    emptyRow.innerHTML = `
+
+      <td
+        style="
+          height:${TOTAL_HEIGHT}px;
+          padding:0;
+        "
+      ></td>
+
+      <td
+        style="
+          height:${TOTAL_HEIGHT}px;
+          padding:0;
+        "
+      ></td>
+
+      <td
+        style="
+          height:${TOTAL_HEIGHT}px;
+          padding:0;
+        "
+      ></td>
+
+      <td
+        style="
+          height:${TOTAL_HEIGHT}px;
+          padding:0;
+        "
+      ></td>
+
+    `;
+
+    tb.appendChild(emptyRow);
 
   }
 
 }
 
+
+/* =====================================================
+   FORM INPUT LISTENERS
+   ===================================================== */
 
 [
   'company',
@@ -819,17 +1226,34 @@ function updatePreview(){
 });
 
 
+/* =====================================================
+   SAVE DRAFT
+   ===================================================== */
+
 function saveDraft(){
 
   const draft = {
 
-    company:$('company').value,
-    address:$('address').value,
-    attention:$('attention').value,
-    quote:$('quote').value,
-    date:$('date').value,
-    requested:$('requested').value,
-    items:items
+    company:
+      $('company').value,
+
+    address:
+      $('address').value,
+
+    attention:
+      $('attention').value,
+
+    quote:
+      $('quote').value,
+
+    date:
+      $('date').value,
+
+    requested:
+      $('requested').value,
+
+    items:
+      items
 
   };
 
@@ -841,9 +1265,11 @@ function saveDraft(){
       JSON.stringify(draft)
     );
 
+
     alert(
       'Draft saved in this browser.'
     );
+
 
   }catch(error){
 
@@ -856,12 +1282,18 @@ function saveDraft(){
 }
 
 
+/* =====================================================
+   LOAD DRAFT
+   ===================================================== */
+
 function loadDraft(){
 
   try{
 
     const raw =
-      localStorage.getItem('rfqDraft');
+      localStorage.getItem(
+        'rfqDraft'
+      );
 
 
     if(!raw){
@@ -907,6 +1339,7 @@ function loadDraft(){
 
     console.error(e);
 
+
     alert(
       'Unable to load saved draft.'
     );
@@ -916,9 +1349,17 @@ function loadDraft(){
 }
 
 
+/* =====================================================
+   CLEAR
+   ===================================================== */
+
 function clearForm(){
 
-  if(!confirm('Clear this RFQ?'))
+  if(
+    !confirm(
+      'Clear this RFQ?'
+    )
+  )
     return;
 
 
@@ -938,19 +1379,30 @@ function clearForm(){
 
   items = [];
 
+
   addItem();
 
 }
 
 
-function getFileName(extension){
+/* =====================================================
+   FILE NAME
+   ===================================================== */
+
+function getFileName(
+  extension
+){
 
   let companyName =
-    $('company').value.trim();
+    $('company')
+      .value
+      .trim();
 
 
   let quoteNo =
-    $('quote').value.trim();
+    $('quote')
+      .value
+      .trim();
 
 
   if(!companyName)
@@ -980,9 +1432,9 @@ function getFileName(extension){
 }
 
 
-/* =========================================
-   SHARE FILE USING NATIVE MOBILE SHARE SHEET
-========================================= */
+/* =====================================================
+   SHARE FILE
+   ===================================================== */
 
 async function shareFile(
   blob,
@@ -996,7 +1448,9 @@ async function shareFile(
       new File(
         [blob],
         fileName,
-        {type:blob.type}
+        {
+          type:blob.type
+        }
       );
 
 
@@ -1049,9 +1503,9 @@ async function shareFile(
 }
 
 
-/* =========================================
-   SAVE AS PDF - EXACT A4
-========================================= */
+/* =====================================================
+   SAVE PDF
+   ===================================================== */
 
 async function savePDF(button){
 
@@ -1074,21 +1528,12 @@ async function savePDF(button){
       await html2canvas(
         paper,
         {
-
           scale:2.5,
-
           useCORS:true,
-
           backgroundColor:'#ffffff',
-
           logging:false,
-
-          width:
-            paper.scrollWidth,
-
-          height:
-            paper.scrollHeight
-
+          width:paper.scrollWidth,
+          height:paper.scrollHeight
         }
       );
 
@@ -1106,36 +1551,22 @@ async function savePDF(button){
 
     const pdf =
       new jsPDF({
-
         orientation:'portrait',
-
         unit:'mm',
-
         format:'a4',
-
         compress:true
-
       });
 
 
     pdf.addImage(
-
       imageData,
-
       'JPEG',
-
       0,
-
       0,
-
       210,
-
       297,
-
       undefined,
-
       'FAST'
-
     );
 
 
@@ -1177,7 +1608,9 @@ async function savePDF(button){
       document.createElement('a');
 
 
-    link.href = url;
+    link.href =
+      url;
+
 
     link.download =
       fileName;
@@ -1198,9 +1631,7 @@ async function savePDF(button){
 
     setTimeout(
       ()=>{
-        URL.revokeObjectURL(
-          url
-        );
+        URL.revokeObjectURL(url);
       },
       2000
     );
@@ -1209,6 +1640,7 @@ async function savePDF(button){
   }catch(error){
 
     console.error(error);
+
 
     alert(
       'Unable to create PDF. Please try again.'
@@ -1219,6 +1651,7 @@ async function savePDF(button){
 
     button.disabled = false;
 
+
     button.textContent =
       'Save as PDF';
 
@@ -1227,9 +1660,9 @@ async function savePDF(button){
 }
 
 
-/* =========================================
-   SAVE AS JPEG / IOS PHOTOS
-========================================= */
+/* =====================================================
+   SAVE JPEG
+   ===================================================== */
 
 async function saveJPEG(button){
 
@@ -1252,35 +1685,28 @@ async function saveJPEG(button){
       await html2canvas(
         paper,
         {
-
           scale:3,
-
           useCORS:true,
-
           backgroundColor:'#ffffff',
-
           logging:false,
-
-          width:
-            paper.scrollWidth,
-
-          height:
-            paper.scrollHeight
-
+          width:paper.scrollWidth,
+          height:paper.scrollHeight
         }
       );
 
 
     const blob =
-      await new Promise(resolve=>{
+      await new Promise(
+        resolve=>{
 
-        canvas.toBlob(
-          resolve,
-          'image/jpeg',
-          0.95
-        );
+          canvas.toBlob(
+            resolve,
+            'image/jpeg',
+            0.95
+          );
 
-      });
+        }
+      );
 
 
     if(!blob){
@@ -1326,7 +1752,9 @@ async function saveJPEG(button){
       document.createElement('a');
 
 
-    link.href = url;
+    link.href =
+      url;
+
 
     link.download =
       fileName;
@@ -1347,9 +1775,7 @@ async function saveJPEG(button){
 
     setTimeout(
       ()=>{
-        URL.revokeObjectURL(
-          url
-        );
+        URL.revokeObjectURL(url);
       },
       2000
     );
@@ -1358,6 +1784,7 @@ async function saveJPEG(button){
   }catch(error){
 
     console.error(error);
+
 
     alert(
       'Unable to create JPEG. Please try again.'
@@ -1368,6 +1795,7 @@ async function saveJPEG(button){
 
     button.disabled = false;
 
+
     button.textContent =
       'Save as JPEG';
 
@@ -1376,9 +1804,9 @@ async function saveJPEG(button){
 }
 
 
-/* =========================================
+/* =====================================================
    DEFAULT DATE
-========================================= */
+   ===================================================== */
 
 $('date').value =
   new Date()
@@ -1386,9 +1814,9 @@ $('date').value =
     .slice(0,10);
 
 
-/* =========================================
+/* =====================================================
    START WITH ONE ITEM
-========================================= */
+   ===================================================== */
 
 addItem();
 
